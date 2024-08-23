@@ -1,0 +1,31 @@
+.home .home-slider .slide{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding-top: 1rem;
+}
+.home .home-slider .slide .content{
+    flex: 1 1 45rem;
+}
+.home .home-slider .slide .image{
+    flex: 1 1 45rem;
+}
+.home .home-slider .slide .image img{
+    width: 60vh;
+    height: 50vh;
+}
+.home .home-slider .slide .content span{
+    color: var(--green);
+    font-size: 3rem;
+}
+.home .home-slider .slide .content h3{
+    color: var(--black);
+    font-size: 7rem;
+}
+.home .home-slider .slide .content p{
+    color: var(--light-colore);
+    font-size:3rem;
+    padding: .5rem;
+    line-height: 1.5;
+}
