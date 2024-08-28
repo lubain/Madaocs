@@ -25,8 +25,8 @@
                         <td><?= $row['pseudo'] ?></td>
                         <td><?= $row['email'] ?></td>
                         <td>
-                            <a href="update?id=<?= $row['id'] ?>" class="btn btn-out line-primary">modiffier</a>
-                            <a href="delete?id=<?= $row['id'] ?>"class="btn btn-retline-danger">supprimer</a>
+                            <a href="<?= base_url("public/update/".$row['id']); ?>" class="btn btn-out line-primary">modiffier</a>
+                            <a href="<?= base_url("public/delete/".$row['id']); ?>"class="btn btn-retline-danger">supprimer</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

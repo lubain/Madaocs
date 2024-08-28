@@ -11,6 +11,9 @@
             'prix','proprietaire','clee','place',
             'couleur','carrousel','favorie'
         ];
-    }
 
-?>
+        public function findAllWhere(int $id)
+        {
+            return $this->findAll()[$id];
+        }
+    }

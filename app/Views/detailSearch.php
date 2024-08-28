@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="../swiper-3.0.1/dist/css/swiper.min.css">
-    <!-- <link rel="stylesheet" href="../css/affichage-produit.css"> -->
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <!-- <link rel="stylesheet" href="../css/style1.css"> -->
-    <!-- <link rel="stylesheet" href="../css/slide1.css"> -->
-    <link rel="stylesheet" href="../css/all.css">
-    <link rel="stylesheet" href="../css/fontawesome.css">
+    <link rel="stylesheet" href="../../swiper-3.0.1/dist/css/swiper.min.css">
+    <!-- <link rel="stylesheet" href="../../css/affichage-produit.css"> -->
+    <link rel="stylesheet" href="../../css/header.css">
+    <link rel="stylesheet" href="../../css/footer.css">
+    <!-- <link rel="stylesheet" href="../../css/style1.css"> -->
+    <!-- <link rel="stylesheet" href="../../css/slide1.css"> -->
+    <link rel="stylesheet" href="../../css/all.css">
+    <link rel="stylesheet" href="../../css/fontawesome.css"> 
 
     <!-- Demo styles -->
     <style>
@@ -30,17 +30,15 @@
         padding: 0;
     }
     .swiper-container {
-        width: 90%;
-        height: 80%;
-        margin-top: 75px;
-        margin-left: auto;
-        margin-right: auto;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
     }
     .swiper-slide {
         text-align: center;
         font-size: 18px;
         background: #fff;
-
+        
         /* Center slide text vertically */
         display: -webkit-box;
         display: -ms-flexbox;
@@ -54,17 +52,22 @@
         -ms-flex-align: center;
         -webkit-align-items: center;
         align-items: center;
+        background-color: transparent;
+    }
+    .img-contained{
+        width: 75%;
+        height: 100%;
     }
     </style>
 </head>
 <body>
     <!-- Swiper -->
-    <p style="margin-top:10rem;"></p>
+    <!-- <p style="margin-top:10rem;"></p> -->
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <?php foreach ($images as $image) :?>
             <div class="swiper-slide">
-                <img src="<?= $image["img_dir"] ?>" alt="">
+                <img src="../../<?= $image["img_dir"] ?>" class="img-contained" alt="">
             </div>
             <?php endforeach ?>
         </div>
@@ -76,7 +79,7 @@
     </div>
 
     <!-- Swiper JS -->
-    <script src="../swiper-3.0.1/dist/js/swiper.min.js"></script>
+    <script src="../../swiper-3.0.1/dist/js/swiper.min.js"></script>
 
     <!-- Initialize Swiper -->
     <script>
@@ -84,15 +87,16 @@
         pagination: '.swiper-pagination',
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
-        slidesPerView: 1,
         paginationClickable: true,
         spaceBetween: 30,
-        loop: true
+        centeredSlides: true,
+        autoplay: 2500,
+        autoplayDisableOnInteraction: false
     });
     </script>
     <p style="margin-top:5rem;"></p>
         
     <?php require 'footer.php'?>
-    <script src="../js/app.js"></script>
+    <script src="../../js/app.js"></script>
 </body>
 </html>

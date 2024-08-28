@@ -12,12 +12,12 @@
             </div>
             <div class="box">
                 <h3>links</h3>
-                <a href="search"><span class="fas fa-search"></span> Trouver votre voiture</a>
-                <a href="sell"><span class="fas fa-sign-in-alt"></span> Vendez votre voiture</a>
+                <a href="<?= base_url("public/search"); ?>"><span class="fas fa-search"></span> Trouver votre voiture</a>
+                <a href="<?= base_url("public/sell"); ?>"><span class="fas fa-sign-in-alt"></span> Vendez votre voiture</a>
             </div>
             <div class="box">
                 <h3>contact-info</h3>
-                <a href="#"><span class="fas fa-phone"></span>+2610300639218</a>
+                <a href="#"><span class="fas fa-phone"></span>+2610320639218</a>
                 <a href="#"><span class="fa-brands fa-google-plus-g"></span>fadhel@gmail.com</a>
             </div>
             <div class="box">

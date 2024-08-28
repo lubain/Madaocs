@@ -32,7 +32,7 @@
                 <a href="" class="fas fa-heart"></a>
                 <a href="" class="fas fa-eye"></a>
                 <h2 style="font-size: 2rem;color: #192a56;"><span style="font-size: 2.6rem"><?= $produit["marque"] ?></span> <?= $produit["model"] ?></h2>
-                <a href="search/detailSearch?id=<?= $produit["id"] ?>"><img src="local/<?= $produit["photo"] ?>"  alt=""></a>
+                <a href="<?= base_url("public/search/detailSearch/".$produit['id']); ?>"><img src="local/<?= $produit["photo"] ?>"  alt=""></a>
                 <h2 style="font-size: 2rem;color: #192a56;">
                     .<?= $produit["annee"]?>
                     <i></i><?= $produit["km"]?><br>

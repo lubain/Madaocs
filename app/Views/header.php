@@ -1,10 +1,10 @@
 <header>
-    <a href="accueil"><img src="img/icons/logoweb.png" alt="" class="dim"></a>
+    <a href="home"><img src="img/icons/logoweb.png" alt="" class="dim"></a>
     <nav class="navbar">
-        <a href="search" class="<?php if (isset($nav) && $nav == 'search'){echo 'act';}?>">
+        <a href="<?= base_url("public/search"); ?>" class="<?php if (isset($nav) && $nav == 'search'){echo 'act';}?>">
             <span class="span"<?php if (isset($nav) && $nav == 'search'){echo 'style="color:white;"';}?>><i class="fas fa-search"></i> trouver votre voiture</span>
         </a>
-        <a href="sell" class="<?php if (isset($nav) && $nav == 'sell'){echo 'act';}?>">
+        <a href="<?= base_url("public/sell"); ?>" class="<?php if (isset($nav) && $nav == 'sell'){echo 'act';}?>">
             <span class="span"<?php if (isset($nav) && $nav == 'sell'){echo 'style="color:white;"';}?>><i class="fas fa-sign-in-alt"></i> vendez votre voiture</span>
         </a>
         <a href="#contact"><i class="fas fa-link"></i> contact</a>
