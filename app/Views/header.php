@@ -1,5 +1,5 @@
 <header>
-    <a href="home"><img src="img/icons/logoweb.png" alt="" class="dim"></a>
+    <a href="<?= base_url("public/"); ?>"><img src="img/icons/logoweb.png" alt="" class="dim"></a>
     <nav class="navbar">
         <a href="<?= base_url("public/search"); ?>" class="<?php if (isset($nav) && $nav == 'search'){echo 'act';}?>">
             <span class="span"<?php if (isset($nav) && $nav == 'search'){echo 'style="color:white;"';}?>><i class="fas fa-search"></i> trouver votre voiture</span>

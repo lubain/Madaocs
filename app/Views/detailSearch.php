@@ -10,8 +10,6 @@
     <!-- <link rel="stylesheet" href="../../css/affichage-produit.css"> -->
     <link rel="stylesheet" href="../../css/header.css">
     <link rel="stylesheet" href="../../css/footer.css">
-    <!-- <link rel="stylesheet" href="../../css/style1.css"> -->
-    <!-- <link rel="stylesheet" href="../../css/slide1.css"> -->
     <link rel="stylesheet" href="../../css/all.css">
     <link rel="stylesheet" href="../../css/fontawesome.css"> 
 
@@ -55,8 +53,8 @@
         background-color: transparent;
     }
     .img-contained{
-        width: 75%;
-        height: 100%;
+        height: 45rem;
+        margin: 1rem 0;
     }
     </style>
 </head>
@@ -66,9 +64,9 @@
     <div class="swiper-container">
         <div class="swiper-wrapper">
             <?php foreach ($images as $image) :?>
-            <div class="swiper-slide">
-                <img src="../../<?= $image["img_dir"] ?>" class="img-contained" alt="">
-            </div>
+                <div class="swiper-slide">
+                    <img src="../../<?= $image["img_dir"] ?>" class="img-contained" alt="">
+                </div>
             <?php endforeach ?>
         </div>
         <!-- Add Pagination -->

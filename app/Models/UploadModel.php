@@ -3,11 +3,11 @@
     use CodeIgniter\Model;
 
     class UploadModel extends Model {
-        protected $table = "image";
+        protected $table = "images";
         protected $primaryKey = "id";
-        protected $allowedFields = ['name','img_dir'];
+        protected $allowedFields = ['user_id','name','img_dir'];
 
-        public function uploadFile() {
+        public function uploadFile($user_id) {
             $phpFileUploadErrors = array(
                 0 => 'There is no error, the file upload with succes',
                 1 => 'the upload file excceds the upload_maxfilesize directive in php.ini',
@@ -36,6 +36,7 @@
                             $img_dir = 'local/'.$file_array[$i]['name'];
                             move_uploaded_file($file_array[$i]['tmp_name'],$img_dir);
                             $data = [
+                                'user_id'=>$user_id,
                                 'name'=>$name,
                                 'img_dir'=>$img_dir
                             ];
