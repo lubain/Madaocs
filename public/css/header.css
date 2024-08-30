@@ -112,13 +112,19 @@ header .icons #menu-bars{
     background:white;
     padding:3rem;
 }
+svg{
+    width: 20px;
+}
 @media (max-width:991px) {
     html{
-        font-size: 55%;
+        font-size: 60%;
     }   
     header{
         padding: 1rem 2rem;
-    }     
+    }
+    svg{
+        width: 15px;
+    }
 }
 @media (max-width:768px) {
     header{
@@ -164,11 +170,11 @@ header .icons #menu-bars{
         visibility: hidden;
     }
 }
-@media (max-width:991px) {
+/* @media (max-width:991px) {
     html{
         font-size: 50%;
     }      
-}
+} */
 .navbar a{
     margin-right: 1rem;
 }

@@ -19,12 +19,16 @@ class Home extends BaseController
     {
         $model = new ProduitModel();
         $data['produits'] = $model->findAll();
+        $marque = $this->request->getPost('search');
+        if ($marque) {
+            $data['produits'] = $model->like("marque",$marque)->findAll();
+        }
         return view('search',$data);
     }
     public function detailSearch($id): string
     {
         $model = new ImagesModel();
-        $data['images'] = $model->findAllWhere($id);
+        $data['images'] = $model->where('user_id',$id)->findAll();
         return view('detailSearch',$data);
     }
     public function sell(): string
@@ -38,31 +42,51 @@ class Home extends BaseController
 
     // -----------------------------------
 
-    public function admin(): string
+    public function admin()
     {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         return view('admin');
     }
 
     // -------- Users controller -------------
 
-    public function userList(): string
+    public function userList()
     {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         $model = new UserModel();
         $data['user'] = $model->findAll();
         return view('userList',$data);
     }
     public function formUser(): string
     {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         return view("createUser");
     }
     public function findUser($id): string
     {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         $model = new UserModel();
         $data['user'] = $model->find($id);
         return view('userUpdate',$data);
     }
     public function createUser()
     {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         $model = new UserModel();
         $data = [
             'pseudo'=>$this->request->getPost('pseudo'),
@@ -85,6 +109,10 @@ class Home extends BaseController
     }
     public function deleteUser($id)
     {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         $model = new UserModel();
         $model->delete($id);
         $url = base_url("public/userList");
@@ -95,24 +123,44 @@ class Home extends BaseController
 
     // ---------- produit controller ----------
 
-    public function produitList(): string
+    public function produitList()
     {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         $model = new ProduitModel();
         $data['produit'] = $model->findAll();
         return view('produitList',$data);
     }
-    public function formProduit(): string
+    public function searchProduit(): string
     {
+        return $this->search();
+    }
+    public function formProduit()
+    {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         return view("createProduit");
     }
-    public function findProduit($id): string
+    public function findProduit($id)
     {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         $model = new ProduitModel();
         $data['produit'] = $model->find($id);
         return view('produitUpdate',$data);
     }
     public function createProduit()
     {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         $model = new ProduitModel();
         $data = [
             'marque'=>$this->request->getPost('marque'),
@@ -138,6 +186,10 @@ class Home extends BaseController
     }
     public function produitUpdate($id)
     {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         $model = new ProduitModel();
         $data = [
             'marque'=>$this->request->getPost('marque'),
@@ -161,6 +213,10 @@ class Home extends BaseController
     }
     public function deleteProduit($id)
     {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         $model = new ProduitModel();
         $model->delete($id);
         $url = base_url("public/produitList");
@@ -174,6 +230,10 @@ class Home extends BaseController
         return view('upload');
     }
     public function uploadFile($user_id) {
+        if (!session()->get('id')) {
+            $url = base_url("public/login");
+            return redirect()->to($url);
+        }
         $model = new UploadModel();
         $model->uploadFile($user_id);
     }

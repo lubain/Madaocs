@@ -1,8 +1,10 @@
+<?php $nav = 'search'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/search.css">
     <link rel="stylesheet" href="css/body.css">
@@ -14,8 +16,8 @@
 <body>
     <?php include "header.php"; ?>
     <p style="margin-top:10rem;"></p>
-    <form action="" method="get" class="search" autocomplete="off">
-        <input type="search" name="q" placeholder="Recherche..." class="input1">
+    <form action="" method="post" class="search" autocomplete="off">
+        <input type="search" name="search" placeholder="Recherche..." class="input1">
         <button class="submit"><img src="img/icons/search.io" alt="" width="40px" height="40px"></button>
     </form>
     <section class="dishes">

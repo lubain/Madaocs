@@ -1,11 +1,19 @@
-<form action="" method="post" id="search-form">
-    <div style="display:grid;grid-template-rows:auto;background:white;padding:2rem;width:60%">
-        <i class="fas fa-user-alt" align="center" style="font-size:4rem;"></i>
-        <input type="text" style="background:#eee;margin:.5rem;padding:1rem" placeholder="Nom" name="nom" required id="" >
-        <input type="text" style="background:#eee;margin:.5rem;padding:1rem" placeholder="Prenom" name="prenom" required id="">
-        <input type="text" style="background:#eee;margin:.5rem;padding:1rem" placeholder="Email" name="email" required id="">
-        <input type="password" style="background:#eee;margin:.5rem;padding:1rem" placeholder="Mot de pass" name="pass" required id="">
-        <div><input type="submit" value="s'inscire" name="envoyer" class="btn sub"></div>
+<div class="body" id="search-form">
+    <div class="forms">
+        <form action="" method="post">
+            <div class="container">
+                <h1>Login</h1>
+                <div class="form-control" required>
+                    <input type="text" id="email" name="email" required>
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-control" required>
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <input align="center" type="submit" name="envoyer" class="submite" value="Connexion">
+            </div>
+        </form>
     </div>
     <img src="img/icons/1491313938-close_82982.ico" alt="" id="close">
-</form>
+</div>
