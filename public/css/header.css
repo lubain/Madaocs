@@ -60,7 +60,7 @@ header .icons a{
     width: 4.5rem;
     text-align: center;
     font-size: 1.7rem;
-    color: #fff;
+    color: var(--black);
 }
 header .icons #menu-bars{
     display: none;

@@ -11,7 +11,7 @@
 <body>
     <?php include "headerAdmin.php"; ?>
     <p style="margin: 10rem 0;"></p>
-    <h1>Welcomme here admin</h1>
+    <h1>Bienvenue l'admin</h1>
     <script src="js/app.js"></script>
 </body>
 </html>

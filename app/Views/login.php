@@ -22,17 +22,7 @@
                         <label for="password">Password</label>
                     </div>
                     <p style="color: red;">
-                        <?php
-                            if (isset($errorPass) && isset($errorEmail)) {
-                                if (!$errorEmail && !$errorPass) {
-                                    $error = "votre email et mot de passe sont incorrect";
-                                } else {
-                                    if (!$errorPass) $error = "mot de passe incorrect";
-                                    else if (!$errorEmail) $error = "email incorrect";
-                                }
-                                echo $error;
-                            }
-                        ?>
+                        <?= $error;?>
                     </p>
                     <input align="center" type="submit" name="envoyer" class="submite" value="Connexion">
                 </div>

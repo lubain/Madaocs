@@ -15,7 +15,8 @@ class Login extends BaseController
             $url = base_url("public/admin");
             return redirect()->to($url);
         }
-        return view('login');
+        $data["error"] = "";
+        return view('login',$data);
     }
     public function check()
     {
@@ -32,9 +33,15 @@ class Login extends BaseController
             $url = base_url("public/admin");
             return redirect()->to($url);
         }
-        $error["errorEmail"] = $errorEmail;
-        $error["errorPass"] = $errorPass;
-        return view('login',$error);
+        $error = "";
+        if (!$errorEmail && !$errorPass) {
+            $error = "votre email et mot de passe sont incorrect";
+        } else {
+            if (!$errorPass) $error = "mot de passe incorrect";
+            else if (!$errorEmail) $error = "email incorrect";
+        }
+        $data["error"] = $error;
+        return view('login',$data);
     }
     public function insertAdmin()
     {
